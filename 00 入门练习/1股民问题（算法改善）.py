@@ -1,25 +1,23 @@
-# 允许交易一次
+#!/user/bin/env python3
+# -*- coding: utf-8 -*-
+# 交易一次
 def max_profit_one_deal(prices):
     if not prices:
         return 0
 
-    in_price = out_profit = prices[0]
+    min_price = prices[0]
     max_profit = 0
 
     for price in prices:
-        if price < in_price:
-            in_price = price
-            out_profit = 0
-        elif price > out_profit:
-            out_profit = price
-            if out_profit - in_price > max_profit:
-                max_profit = out_profit - in_price
-
+        if price < min_price:
+            min_price = price
+        else:
+            profit = price - min_price
+            if profit > max_profit:
+                max_profit = profit
 
     return max_profit
 
-
-# 示例用法
 prices = list(map(int, input().split()))
 max_profit = max_profit_one_deal(prices)
 
