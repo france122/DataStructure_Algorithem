@@ -9,7 +9,7 @@
 - 04树及二叉树算法
 
 ## 代表题目
-- 机制的股民老张（算法时间复杂度）<br>
+- 机制的股民老张<br>
 - 反反复复
 - 位查询
 - 热土豆问题
@@ -21,3 +21,9 @@
 - 求逆序对数（归并排序）
 - 重建二叉树（二叉树的遍历）
 
+## 思路解释
+- 股民问题交易一次：min_price(最低价格，从prices【0】开始，在遍历的过程中遇到更小的，更新min_price=price),max_profit(在所有的price-min_price中留下最大的，可以用if判断代替max(output列表))
+<br>leetcode链接：https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/
+- 股民问题交易多次：将所有上升段累加
+- 股民问题交易2次：动态规划
+- 股民问题交易k次
